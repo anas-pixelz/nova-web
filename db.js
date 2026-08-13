@@ -1,7 +1,7 @@
 /**
  * Nova Chrono Webserver — Self-contained Database & Game Logic Engine
  * Connects directly to MongoDB and caches collections in-memory.
- * Enables synchronous database helpers matching the bot's structure.
+ * Provides synchronous helper interfaces and handles pending promises for serverless.
  */
 
 import fs from 'fs';
@@ -16,28 +16,35 @@ const CONFIG_PATH = path.resolve(__dirname, 'config.json');
 export const CONFIG = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 
 /* ── Memory Cache ─────────────────────────────────────────────── */
-let usersCache = {};
-let squadsCache = {};
-let adminsCache = { ownerId: 0, admins: [] };
-let groupsCache = {};
-let cardsCache = [];
+export let usersCache = {};
+export let squadsCache = {};
+export let adminsCache = { ownerId: 0, admins: [] };
+export let groupsCache = {};
+export let cardsCache = [];
 
 /* ── MongoDB Connection ───────────────────────────────────────── */
-let mongoDb = null;
-let client = null;
+export let mongoDb = null;
+export let client = null;
+let pendingPromises = [];
 
-const col = {
+export const col = {
   users:  () => mongoDb.collection('users'),
   squads: () => mongoDb.collection('squads'),
   admins: () => mongoDb.collection('admins'),
   groups: () => mongoDb.collection('groups'),
-  cards:  () => mongoDb.collection('cards'),
+  cards:  () => {
+    try {
+      return client.db('shoob').collection('cards');
+    } catch {
+      return mongoDb.collection('cards');
+    }
+  },
 };
 
 export async function initMongoStorage() {
   const uri = process.env.MONGODB_URI || process.env.MONGO_URI;
   if (!uri) {
-    console.warn('⚠️ MONGODB_URI is not set. Memory cache is empty.');
+    console.warn('⚠️ MONGODB_URI is not set.');
     return false;
   }
   try {
@@ -46,7 +53,7 @@ export async function initMongoStorage() {
     await client.connect();
     mongoDb = client.db(dbName);
 
-    // Warm up the memory cache from MongoDB
+    // Initial cache warm-up (subsequent requests will refresh individual records)
     const [users, squads, admins, groups, cards] = await Promise.all([
       col.users().find({}).toArray(),
       col.squads().find({}).toArray(),
@@ -55,34 +62,30 @@ export async function initMongoStorage() {
       col.cards().find({}).limit(500).toArray()
     ]);
 
-    users.forEach(u => {
-      const id = String(u.id || u._id);
-      usersCache[id] = u;
-    });
+    users.forEach(u => { usersCache[String(u.id || u._id)] = u; });
+    squads.forEach(s => { squadsCache[String(s.id || s._id)] = s; });
+    groups.forEach(g => { groupsCache[String(g.id || g._id)] = g; });
+    if (admins) adminsCache = admins;
+    if (cards) cardsCache = cards;
 
-    squads.forEach(s => {
-      const id = String(s.id || s._id);
-      squadsCache[id] = s;
-    });
-
-    groups.forEach(g => {
-      const id = String(g.id || g._id);
-      groupsCache[id] = g;
-    });
-
-    if (admins) {
-      adminsCache = admins;
-    }
-
-    if (cards) {
-      cardsCache = cards;
-    }
-
-    console.log(`✅ Memory Cache Warmed: ${users.length} users, ${squads.length} squads, ${cards.length} cards.`);
+    console.log(`✅ Memory Cache Warmed: ${users.length} users.`);
     return true;
   } catch (e) {
     console.error('❌ MongoDB Connection/Warmup failed:', e.message);
     throw e;
+  }
+}
+
+/* ── Await Helper for Serverless (Vercel) ──────────────────────── */
+export function trackPromise(promise) {
+  pendingPromises.push(promise);
+  promise.catch(() => {});
+}
+
+export async function awaitPendingWrites() {
+  if (pendingPromises.length > 0) {
+    await Promise.all(pendingPromises);
+    pendingPromises = [];
   }
 }
 
@@ -192,11 +195,11 @@ export const db = {
     if (!adminsCache.admins.includes(uid)) {
       adminsCache.admins.push(uid);
       if (mongoDb) {
-        col.admins().updateOne(
+        trackPromise(col.admins().updateOne(
           { _id: 'singleton' },
           { $addToSet: { admins: uid } },
           { upsert: true }
-        ).catch(console.error);
+        ));
       }
     }
     return true;
@@ -207,10 +210,10 @@ export const db = {
     if (adminsCache.admins) {
       adminsCache.admins = adminsCache.admins.filter(id => id !== uid);
       if (mongoDb) {
-        col.admins().updateOne(
+        trackPromise(col.admins().updateOne(
           { _id: 'singleton' },
           { $pull: { admins: uid } }
-        ).catch(console.error);
+        ));
       }
     }
     return true;
@@ -237,7 +240,7 @@ export const db = {
     usersCache[idStr] = newUser;
 
     if (mongoDb) {
-      col.users().insertOne({ _id: idStr, ...newUser }).catch(console.error);
+      trackPromise(col.users().insertOne({ _id: idStr, ...newUser }));
     }
     return newUser;
   },
@@ -250,7 +253,7 @@ export const db = {
 
     if (mongoDb) {
       const { _id, ...cleanUser } = user;
-      col.users().replaceOne({ _id: idStr }, cleanUser).catch(console.error);
+      trackPromise(col.users().replaceOne({ _id: idStr }, cleanUser));
     }
     return user;
   },
@@ -262,10 +265,10 @@ export const db = {
     if (user) {
       user.linkedEmail = cleanEmail;
       if (mongoDb) {
-        col.users().updateOne(
+        trackPromise(col.users().updateOne(
           { _id: idStr },
           { $set: { linkedEmail: cleanEmail } }
-        ).catch(console.error);
+        ));
       }
     }
   },
@@ -297,7 +300,7 @@ export const db = {
 
     if (mongoDb) {
       const dbPayload = { _id: squadId, ...newSquad };
-      col.squads().insertOne(dbPayload).catch(console.error);
+      trackPromise(col.squads().insertOne(dbPayload));
     }
     return newSquad;
   },
@@ -310,7 +313,7 @@ export const db = {
 
     if (mongoDb) {
       const { _id, ...cleanSquad } = squad;
-      col.squads().replaceOne({ _id: idStr }, cleanSquad).catch(console.error);
+      trackPromise(col.squads().replaceOne({ _id: idStr }, cleanSquad));
     }
     return squad;
   },
@@ -320,7 +323,7 @@ export const db = {
     if (squadsCache[idStr]) {
       delete squadsCache[idStr];
       if (mongoDb) {
-        col.squads().deleteOne({ _id: idStr }).catch(console.error);
+        trackPromise(col.squads().deleteOne({ _id: idStr }));
       }
       return true;
     }
@@ -399,7 +402,7 @@ export const db = {
     if (usersCache[idStr]) {
       delete usersCache[idStr];
       if (mongoDb) {
-        col.users().deleteOne({ _id: idStr }).catch(console.error);
+        trackPromise(col.users().deleteOne({ _id: idStr }));
       }
       return true;
     }
@@ -415,7 +418,7 @@ export const db = {
       }
     });
     if (mongoDb) {
-      col.users().updateMany({}, { $set: { collection: [] } }).catch(console.error);
+      trackPromise(col.users().updateMany({}, { $set: { collection: [] } }));
     }
     return count;
   },

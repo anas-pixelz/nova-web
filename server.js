@@ -11,7 +11,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Import the database and game logic from the local self-contained file!
-import { db, CONFIG, getTier, getLevelInfo, initMongoStorage } from './db.js';
+import { db, CONFIG, getTier, getLevelInfo, initMongoStorage, col, usersCache, awaitPendingWrites } from './db.js';
 
 // Self-contained character cards helper
 const getAllCards = () => db.getAllCards();
@@ -309,8 +309,15 @@ async function handleReq(req, res) {
   if (p === '/api/auth/email' && method === 'POST') {
     const { email } = await parseBody(req);
     if (!email) return sendJSON(res, 400, { ok: false, error: 'Email required' });
-    const user = db.getUserByEmail(email);
+    
+    // Query MongoDB directly for real-time sync
+    const queryEmail = String(email).trim().toLowerCase();
+    const user = await col.users().findOne({ linkedEmail: queryEmail });
     if (!user) return sendJSON(res, 401, { ok: false, error: 'No account linked to this email. Use /secure in the Telegram bot first.' });
+    
+    // Refresh memory cache
+    usersCache[String(user.id || user._id)] = user;
+    
     const token = signToken({ userId: user.id, exp: Date.now() + 30 * 24 * 60 * 60 * 1000 });
     return sendJSON(res, 200, { ok: true, token, user: publicUser(user) });
   }
@@ -319,9 +326,15 @@ async function handleReq(req, res) {
   const userId = getUserIdFromReq(req);
   if (!userId) return sendJSON(res, 401, { ok: false, error: 'Unauthorized — please log in' });
 
-  let user = db.getUser(userId);
-  if (!user) {
-    user = db.registerUser(userId, '', 'Magic Knight');
+  // Fetch from MongoDB directly to check for bot updates
+  let user = await col.users().findOne({ _id: String(userId) });
+  if (user) {
+    usersCache[String(userId)] = user; // refresh memory cache
+  } else {
+    user = db.getUser(userId);
+    if (!user) {
+      user = db.registerUser(userId, '', 'Magic Knight');
+    }
   }
 
   if ((p === '/api/auth/me' || p === '/api/profile' || p === '/api/user') && method === 'GET') {
@@ -738,7 +751,6 @@ async function handleReq(req, res) {
 
 /* ── Start ────────────────────────────────────────────────────── */
 async function main() {
-  // Gracefully attempt MongoDB, fallback to local storage
   try {
     const hasMongo = await initMongoStorage();
     if (hasMongo) {
@@ -747,7 +759,7 @@ async function main() {
       console.log('⚠️ Storage Mode: Local JSON File Storage fallback active.');
     }
   } catch (e) {
-    console.warn('❌ MongoDB init error. Falling back to local storage:', e.message);
+    console.warn('❌ MongoDB init error:', e.message);
   }
 
   const server = http.createServer((req, res) => {
@@ -764,4 +776,34 @@ async function main() {
   });
 }
 
-main();
+// Support Vercel Serverless Function deployment
+export default async function handler(req, res) {
+  // Ensure CORS headers
+  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-User-Id');
+  
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200);
+    res.end();
+    return;
+  }
+
+  try {
+    if (!mongoDb) {
+      await initMongoStorage();
+    }
+    await handleReq(req, res);
+  } catch (err) {
+    console.error('Vercel Request error:', err);
+    res.writeHead(500, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ ok: false, error: 'Internal server error' }));
+  } finally {
+    // Ensure all pending database updates are successfully written to MongoDB before Vercel freezes the container!
+    await awaitPendingWrites();
+  }
+}
+
+if (!process.env.VERCEL) {
+  main();
+}
