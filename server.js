@@ -327,10 +327,14 @@ async function handleReq(req, res) {
   if (!userId) return sendJSON(res, 401, { ok: false, error: 'Unauthorized — please log in' });
 
   // Fetch from MongoDB directly to check for bot updates
-  let user = await col.users().findOne({ _id: String(userId) });
-  if (user) {
-    usersCache[String(userId)] = user; // refresh memory cache
-  } else {
+  let user;
+  if (mongoDb) {
+    user = await col.users().findOne({ _id: String(userId) });
+    if (user) {
+      usersCache[String(userId)] = user; // refresh memory cache
+    }
+  }
+  if (!user) {
     user = db.getUser(userId);
     if (!user) {
       user = db.registerUser(userId, '', 'Magic Knight');
@@ -548,12 +552,33 @@ async function handleReq(req, res) {
   }
 
   if ((p === '/api/cards' || p === '/api/cards/search') && method === 'GET') {
-    const q    = (url.searchParams.get('q') || '').toLowerCase();
-    const tier = (url.searchParams.get('tier') || '').toUpperCase();
-    let cards  = getAllCards();
-    if (q)    cards = cards.filter(c => `${c.name} ${c.series || ''}`.toLowerCase().includes(q));
-    if (tier) cards = cards.filter(c => String(c.tier).toUpperCase() === tier);
-    return sendJSON(res, 200, { ok: true, data: cards.slice(0, 120) });
+    const q    = (url.searchParams.get('q') || '').toLowerCase().trim();
+    const tier = (url.searchParams.get('tier') || '').toUpperCase().trim();
+    
+    let cards = [];
+    try {
+      // Always query MongoDB directly for cards (serverless-safe)
+      if (mongoDb) {
+        const filter = {};
+        if (q) filter.$or = [
+          { name: { $regex: q, $options: 'i' } },
+          { series: { $regex: q, $options: 'i' } },
+          { anime: { $regex: q, $options: 'i' } }
+        ];
+        if (tier) filter.tier = tier;
+        cards = await col.cards().find(filter).limit(120).toArray();
+      } else {
+        // Fallback to memory cache
+        cards = db.getAllCards();
+        if (q) cards = cards.filter(c => `${c.name||''} ${c.series||''}`.toLowerCase().includes(q));
+        if (tier) cards = cards.filter(c => String(c.tier).toUpperCase() === tier);
+        cards = cards.slice(0, 120);
+      }
+    } catch(e) {
+      console.error('Cards query error:', e.message);
+      cards = db.getAllCards().slice(0, 120);
+    }
+    return sendJSON(res, 200, { ok: true, data: cards });
   }
 
   // Pokedex

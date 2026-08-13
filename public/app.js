@@ -2,6 +2,21 @@
  * Nova Chrono — Standalone Web App Frontend Single-Page App (SPA)
  */
 
+/* ── Telegram Mini App setup ─────────────────────────────────── */
+function getTmaInitData() {
+  try {
+    const tg = window.Telegram?.WebApp;
+    if (tg && typeof tg.initData === 'string' && tg.initData.length > 0) {
+      return tg.initData;
+    }
+  } catch(e) {}
+  return null;
+}
+
+function isTelegramContext() {
+  return getTmaInitData() !== null;
+}
+
 // API Helper
 const API = {
   token: localStorage.getItem('nc_session_token'),
@@ -9,8 +24,9 @@ const API = {
   
   headers() {
     const h = { 'Content-Type': 'application/json' };
-    if (window.Telegram?.WebApp?.initData) {
-      h['Authorization'] = `tma ${window.Telegram.WebApp.initData}`;
+    const tmaData = getTmaInitData();
+    if (tmaData) {
+      h['Authorization'] = `tma ${tmaData}`;
     } else if (this.token) {
       h['Authorization'] = `Bearer ${this.token}`;
     }
@@ -603,7 +619,10 @@ window.sellItem = async function(id, qty) {
 let activeCardTab = 'characters';
 let cardsQuery = '';
 let selectedTier = '';
+if (!state.cardSubTab) state.cardSubTab = 'browse';
+
 function renderCards(container) {
+  const subTab = state.cardSubTab || 'browse';
   container.innerHTML = `
     <div>
       <div class="cards-tabs">
@@ -611,10 +630,17 @@ function renderCards(container) {
         <button class="cards-tab-btn ${activeCardTab === 'pokedex' ? 'active' : ''}" id="btn-tab-pokedex">Pokédex</button>
       </div>
 
+      ${activeCardTab === 'characters' ? `
+      <div class="cards-tabs" style="margin-top:8px;">
+        <button class="cards-tab-btn ${subTab === 'browse' ? 'active' : ''}" id="btn-subtab-browse">🌐 Browse All</button>
+        <button class="cards-tab-btn ${subTab === 'owned' ? 'active' : ''}" id="btn-subtab-owned">⭐ My Collection</button>
+      </div>
+      ` : ''}
+
       <div class="search-filter-bar">
         <div class="input-group">
           <svg class="input-icon"><use href="#icon-search"/></svg>
-          <input type="text" id="cards-search-input" placeholder="Search collection..." value="${escapeHTML(cardsQuery)}"/>
+          <input type="text" id="cards-search-input" placeholder="${activeCardTab === 'pokedex' ? 'Search pokédex...' : 'Search cards by name or series...'}" value="${escapeHTML(cardsQuery)}"/>
         </div>
         ${activeCardTab === 'characters' ? `
           <select id="cards-tier-select" class="btn btn-secondary" style="padding: 10px 14px; border-radius:12px;">
@@ -635,15 +661,34 @@ function renderCards(container) {
     </div>
   `;
 
-  // Attach tab triggers
+  // Main tab switchers
   document.getElementById('btn-tab-cards').addEventListener('click', () => {
     activeCardTab = 'characters';
+    cardsQuery = '';
+    selectedTier = '';
     renderCards(container);
   });
   document.getElementById('btn-tab-pokedex').addEventListener('click', () => {
     activeCardTab = 'pokedex';
+    cardsQuery = '';
     renderCards(container);
   });
+
+  // Sub-tab switchers (browse / owned)
+  if (activeCardTab === 'characters') {
+    document.getElementById('btn-subtab-browse').addEventListener('click', () => {
+      state.cardSubTab = 'browse';
+      cardsQuery = '';
+      selectedTier = '';
+      renderCards(container);
+    });
+    document.getElementById('btn-subtab-owned').addEventListener('click', () => {
+      state.cardSubTab = 'owned';
+      cardsQuery = '';
+      selectedTier = '';
+      renderCards(container);
+    });
+  }
 
   const searchEl = document.getElementById('cards-search-input');
   searchEl.addEventListener('input', (e) => {
@@ -663,44 +708,84 @@ function renderCards(container) {
 
 async function loadCollectionGrid() {
   const container = document.getElementById('collection-items-container');
-  container.innerHTML = '<div class="text-center text-muted" style="grid-column: 1/-1; padding: 20px 0;">Searching inventory...</div>';
+  container.innerHTML = '<div class="text-center text-muted" style="grid-column: 1/-1; padding: 20px 0;">Searching cards...</div>';
 
   try {
     if (activeCardTab === 'characters') {
-      const res = await API.request('/collection');
-      let cards = res.data || [];
-      
-      // Filter list
-      if (cardsQuery) {
-        cards = cards.filter(c => `${c.name} ${c.series}`.toLowerCase().includes(cardsQuery.toLowerCase()));
+      // Sub-tabs: 'owned' or 'browse'
+      const subTab = state.cardSubTab || 'browse';
+
+      let cards = [];
+      if (subTab === 'owned') {
+        // User's personal collection
+        const res = await API.request('/collection');
+        cards = res.data || [];
+      } else {
+        // Browse ALL cards from shoob database via search endpoint
+        let url = '/cards';
+        const params = [];
+        if (cardsQuery) params.push(`q=${encodeURIComponent(cardsQuery)}`);
+        if (selectedTier) params.push(`tier=${encodeURIComponent(selectedTier)}`);
+        if (params.length) url += '?' + params.join('&');
+        const res = await API.request(url);
+        cards = res.data || [];
       }
-      if (selectedTier) {
-        cards = cards.filter(c => String(c.tier).toUpperCase() === selectedTier.toUpperCase());
+
+      // Client-side filter (for owned tab)
+      if (subTab === 'owned') {
+        if (cardsQuery) cards = cards.filter(c => `${c.name||''} ${c.series||''}`.toLowerCase().includes(cardsQuery.toLowerCase()));
+        if (selectedTier) cards = cards.filter(c => String(c.tier).toUpperCase() === selectedTier.toUpperCase());
       }
 
       if (cards.length === 0) {
-        container.innerHTML = '<p class="text-center text-muted" style="grid-column: 1/-1; padding: 40px 0;">No anime character cards match your criteria.</p>';
+        const msg = subTab === 'owned'
+          ? 'You have no anime cards yet. Cards are claimed in Telegram groups.'
+          : 'No cards found matching your search. Try different keywords.';
+        container.innerHTML = `<p class="text-center text-muted" style="grid-column: 1/-1; padding: 40px 0;">${msg}</p>`;
         return;
       }
 
       let html = '';
       cards.forEach(card => {
-        const img = card.image_url || card.media_url || 'https://i.pinimg.com/736x/87/42/48/874248ef7273934f8a0058b8f2d5e305.jpg';
+        const img = card.image_url || card.media_url || card.img || 'https://i.pinimg.com/736x/87/42/48/874248ef7273934f8a0058b8f2d5e305.jpg';
+        const tierLabel = card.tier || card.rarity || '?';
+        const seriesLabel = card.series || card.anime || card.source || '';
         html += `
-          <div class="character-card" onclick="viewCardDetails('${card.card_id}')">
-            <img class="character-img" src="${img}" alt="${escapeHTML(card.name)}"/>
+          <div class="character-card" onclick="viewCardDetails('${escapeHTML(card.card_id || card._id || card.name)}')"
+               style="cursor:pointer;" data-card-id="${escapeHTML(card.card_id || card._id || '')}"
+               data-card-name="${escapeHTML(card.name||'')}"
+               data-card-series="${escapeHTML(seriesLabel)}"
+               data-card-tier="${escapeHTML(String(tierLabel))}"
+               data-card-img="${escapeHTML(img)}">
+            <img class="character-img" src="${img}" alt="${escapeHTML(card.name||'Card')}" loading="lazy"
+                 onerror="this.src='https://i.pinimg.com/736x/87/42/48/874248ef7273934f8a0058b8f2d5e305.jpg'"/>
             <div class="card-overlay">
-              <span class="card-tier">${card.tier}</span>
-              <span class="card-title">${escapeHTML(card.name)}</span>
-              <span class="card-series">${escapeHTML(card.series)}</span>
+              <span class="card-tier">${escapeHTML(String(tierLabel))}</span>
+              <span class="card-title">${escapeHTML(card.name||'Unknown')}</span>
+              <span class="card-series">${escapeHTML(seriesLabel)}</span>
             </div>
           </div>
         `;
       });
       container.innerHTML = html;
-      
-      // Save collection list globally to retrieve full stats on click
+
+      // Save collection for detail view
       state.currentCardCollection = cards;
+
+      // Attach click from data-attributes (avoids closure issues)
+      container.querySelectorAll('.character-card').forEach(el => {
+        el.addEventListener('click', () => {
+          const card = {
+            card_id: el.dataset.cardId,
+            name: el.dataset.cardName,
+            series: el.dataset.cardSeries,
+            tier: el.dataset.cardTier,
+            image_url: el.dataset.cardImg
+          };
+          openCardDetailModal(card);
+        });
+      });
+
     } else {
       // Pokemon tab
       const res = await API.request('/pokedex');
@@ -711,17 +796,17 @@ async function loadCollectionGrid() {
       }
 
       if (pokemons.length === 0) {
-        container.innerHTML = '<p class="text-center text-muted" style="grid-column: 1/-1; padding: 40px 0;">No Pokémon registered in your Pokédex.</p>';
+        container.innerHTML = '<p class="text-center text-muted" style="grid-column: 1/-1; padding: 40px 0;">No Pokémon registered in your Pokédex yet.</p>';
         return;
       }
 
       let html = '';
       for (const pk of pokemons) {
         html += `
-          <div class="character-card pokemon-card" onclick="viewPokemonDetails('${pk.name}')">
+          <div class="character-card pokemon-card" onclick="viewPokemonDetails('${escapeHTML(pk.name)}')">
             <div class="card-overlay" style="background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);">
               <span class="card-tier" style="background:var(--accent-gold); color:black;">x${pk.count}</span>
-              <span class="card-title" style="text-transform: capitalize;">${pk.name}</span>
+              <span class="card-title" style="text-transform: capitalize;">${escapeHTML(pk.name)}</span>
               <span class="card-series">Click for details</span>
             </div>
           </div>
@@ -729,25 +814,36 @@ async function loadCollectionGrid() {
       }
       container.innerHTML = html;
     }
-  } catch(e) { container.innerHTML = `<p class="text-red" style="grid-column:1/-1;">Error: ${e.message}</p>`; }
+  } catch(e) { container.innerHTML = `<p class="text-red" style="grid-column:1/-1;">Error loading cards: ${e.message}</p>`; }
 }
 
 window.viewCardDetails = function(cardId) {
-  const card = state.currentCardCollection?.find(c => c.card_id === cardId);
+  const card = state.currentCardCollection?.find(c =>
+    (c.card_id || c._id || c.name) === cardId
+  );
   if (!card) return;
+  openCardDetailModal(card);
+};
+
+function openCardDetailModal(card) {
+  const img = card.image_url || card.media_url || card.img || 'https://i.pinimg.com/736x/87/42/48/874248ef7273934f8a0058b8f2d5e305.jpg';
+  const series = card.series || card.anime || card.source || 'Unknown Series';
+  const tier = card.tier || card.rarity || '?';
   openModal(`
     <div style="text-align: center;">
-      <h2>${escapeHTML(card.name)}</h2>
-      <p class="text-gold" style="font-weight: 700; margin-bottom: 12px;">${escapeHTML(card.series)} (Tier ${card.tier})</p>
-      <img src="${card.image_url || card.media_url}" style="width: 100%; max-width: 260px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);"/>
+      <h2 style="margin-bottom:6px;">${escapeHTML(card.name || 'Unknown Card')}</h2>
+      <p class="text-gold" style="font-weight: 700; margin-bottom: 12px;">${escapeHTML(series)} &bull; Tier ${escapeHTML(String(tier))}</p>
+      <img src="${img}" style="width: 100%; max-width: 260px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);"
+           onerror="this.src='https://i.pinimg.com/736x/87/42/48/874248ef7273934f8a0058b8f2d5e305.jpg'"/>
       <div style="text-align: left; display:flex; flex-direction:column; gap:8px; background:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--panel-border);">
-        <div><strong>Card ID:</strong> <code>${card.card_id}</code></div>
-        <div><strong>Tier Rank:</strong> ${card.tier}</div>
-        <div><strong>Combat Power:</strong> ${card.cp || 'Calculated by level'}</div>
+        ${card.card_id ? `<div><strong>Card ID:</strong> <code>${escapeHTML(card.card_id)}</code></div>` : ''}
+        <div><strong>Tier Rank:</strong> ${escapeHTML(String(tier))}</div>
+        ${card.cp ? `<div><strong>Combat Power:</strong> ${card.cp}</div>` : ''}
+        ${card.gender ? `<div><strong>Gender:</strong> ${escapeHTML(card.gender)}</div>` : ''}
       </div>
     </div>
   `);
-};
+}
 
 window.viewPokemonDetails = async function(name) {
   openModal(`<h2>Loading Pokemon details...</h2>`);
@@ -1342,8 +1438,19 @@ async function initApp() {
   });
 
   // Check if session token or Telegram WebApp initData exists
-  const isTelegram = !!(window.Telegram?.WebApp?.initData);
-  if (isTelegram || API.token) {
+  const tg = window.Telegram?.WebApp;
+  if (tg) {
+    // Initialize Telegram Mini App
+    try {
+      tg.ready();
+      tg.expand();
+    } catch(e) { console.warn('TMA init error:', e); }
+  }
+
+  const hasTmaData = isTelegramContext();
+  const hasToken = !!API.token;
+
+  if (hasTmaData || hasToken) {
     document.getElementById('main-app').classList.remove('hidden');
     await fetchAllUserData();
     
