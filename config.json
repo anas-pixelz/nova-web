@@ -1,0 +1,3394 @@
+{
+  "botName": "Nova Chrono",
+  "tagline": "Time is magic, and magic is everything!",
+  "theme": "Black Clover + Cosmic Time Magic",
+  "version": "2.0.0",
+  "currency": {
+    "name": "Yul",
+    "symbol": "💴"
+  },
+  "welcomeBonus": 50000,
+  "dailyReward": 5000,
+  "dailyStreakMultiplier": 1.5,
+  "bonus": {
+    "cooldownMs": 360000000,
+    "minReward": 1000,
+    "maxReward": 3000
+  },
+  "squads": [],
+  "levels": [
+    {
+      "level": 1,
+      "xp": 10,
+      "title": "Junior Magic Knight 5th Class"
+    },
+    {
+      "level": 2,
+      "xp": 30,
+      "title": "Junior Magic Knight 4th Class"
+    },
+    {
+      "level": 3,
+      "xp": 50,
+      "title": "Junior Magic Knight 3rd Class"
+    },
+    {
+      "level": 4,
+      "xp": 70,
+      "title": "Junior Magic Knight 2nd Class"
+    },
+    {
+      "level": 5,
+      "xp": 90,
+      "title": "Junior Magic Knight 1st Class"
+    },
+    {
+      "level": 6,
+      "xp": 110,
+      "title": "Magic Knight Trainee"
+    },
+    {
+      "level": 7,
+      "xp": 130,
+      "title": "Enhanced Cadet / Diamond Tier-1 Subject"
+    },
+    {
+      "level": 8,
+      "xp": 150,
+      "title": "Frontier Scout / Spade Outpost Guard"
+    },
+    {
+      "level": 9,
+      "xp": 170,
+      "title": "Mana Initiate / Heart Naturalist"
+    },
+    {
+      "level": 10,
+      "xp": 190,
+      "title": "Vanguard Recruit / Clover Squad Candidate"
+    },
+    {
+      "level": 11,
+      "xp": 210,
+      "title": "Intermediate Magic Knight 5th Class / Third-Gen Mage"
+    },
+    {
+      "level": 12,
+      "xp": 240,
+      "title": "Intermediate Magic Knight 4th Class / Spade Vanguard"
+    },
+    {
+      "level": 13,
+      "xp": 270,
+      "title": "Intermediate Magic Knight 3rd Class / Heart Adept"
+    },
+    {
+      "level": 14,
+      "xp": 300,
+      "title": "Intermediate Magic Knight 2nd Class / Diamond Augmented Trooper"
+    },
+    {
+      "level": 15,
+      "xp": 330,
+      "title": "Intermediate Magic Knight 1st Class / Spade Border Raider"
+    },
+    {
+      "level": 16,
+      "xp": 360,
+      "title": "Elite Squad Member / Heart Rune Practitioner"
+    },
+    {
+      "level": 17,
+      "xp": 390,
+      "title": "Diamond Combat Magician / Second-Gen Prototype"
+    },
+    {
+      "level": 18,
+      "xp": 420,
+      "title": "Spade Battalion Line-Breaker / Devil Initiate (5%)"
+    },
+    {
+      "level": 19,
+      "xp": 450,
+      "title": "Senior Squad Veteran / Mana Skin Practitioner"
+    },
+    {
+      "level": 20,
+      "xp": 480,
+      "title": "Grand Vanguard / 10% Devil-Possessed Vanguard"
+    },
+    {
+      "level": 21,
+      "xp": 480,
+      "title": "Senior Magic Knight 5th Class / Diamond Squad Commander"
+    },
+    {
+      "level": 22,
+      "xp": 520,
+      "title": "Senior Magic Knight 4th Class / Spade Captain"
+    },
+    {
+      "level": 23,
+      "xp": 560,
+      "title": "Senior Magic Knight 3rd Class / Heart High Mage"
+    },
+    {
+      "level": 24,
+      "xp": 600,
+      "title": "Senior Magic Knight 2nd Class / Diamond Senior Alchemist"
+    },
+    {
+      "level": 25,
+      "xp": 640,
+      "title": "Senior Magic Knight 1st Class / 20% Devil Host Commander"
+    },
+    {
+      "level": 26,
+      "xp": 680,
+      "title": "Special Forces Lieutenant / Mana Zone Adept"
+    },
+    {
+      "level": 27,
+      "xp": 720,
+      "title": "Magic Knight Vice-Captain Candidate / Diamond Lab Director"
+    },
+    {
+      "level": 28,
+      "xp": 760,
+      "title": "Clover Squad Vice-Captain / Spade Fortress Overlord"
+    },
+    {
+      "level": 29,
+      "xp": 800,
+      "title": "Heart Elemental Master / 30% Devil Host Warlord"
+    },
+    {
+      "level": 30,
+      "xp": 840,
+      "title": "Continental Commander / Grand Field Marshal"
+    },
+    {
+      "level": 31,
+      "xp": 840,
+      "title": "Grand Magic Knight / Heart Spirit Guardian Candidate"
+    },
+    {
+      "level": 32,
+      "xp": 890,
+      "title": "Diamond Kingdom Shining General (Junior)"
+    },
+    {
+      "level": 33,
+      "xp": 940,
+      "title": "Spade Dark Disciple (40% Devil Power)"
+    },
+    {
+      "level": 34,
+      "xp": 990,
+      "title": "Magic Knight Squad Captain (Lower Squads)"
+    },
+    {
+      "level": 35,
+      "xp": 1040,
+      "title": "Heart Kingdom Spirit Guardian (Lower Elements)"
+    },
+    {
+      "level": 36,
+      "xp": 1090,
+      "title": "Diamond Kingdom Shining General (Senior)"
+    },
+    {
+      "level": 37,
+      "xp": 1140,
+      "title": "Spade Dark Disciple (50% Devil Power)"
+    },
+    {
+      "level": 38,
+      "xp": 1190,
+      "title": "Elite Magic Knight Squad Captain (Top Squads)"
+    },
+    {
+      "level": 39,
+      "xp": 1240,
+      "title": "Prime Spirit Guardian / Mana Method Grandmaster"
+    },
+    {
+      "level": 40,
+      "xp": 1290,
+      "title": "Diamond Imperial Vanguard Champion"
+    },
+    {
+      "level": 41,
+      "xp": 1290,
+      "title": "Wizard King Candidate / Arcane Stage Awakened"
+    },
+    {
+      "level": 42,
+      "xp": 1350,
+      "title": "True Magic Sovereign / Heart Kingdom Protector"
+    },
+    {
+      "level": 43,
+      "xp": 1291,
+      "title": "Diamond Apex Weaponization Project"
+    },
+    {
+      "level": 44,
+      "xp": 1350,
+      "title": "Spade Dark Triad Member (80% Devil Power)"
+    },
+    {
+      "level": 45,
+      "xp": 1292,
+      "title": "Grand Wizard King / Ruler of the Clover Kingdom"
+    },
+    {
+      "level": 46,
+      "xp": 1350,
+      "title": "Heart Kingdom Magic Queen (Princess Divinity)"
+    },
+    {
+      "level": 47,
+      "xp": 1293,
+      "title": "Saint Stage Spirit Host / Max Synchronization"
+    },
+    {
+      "level": 48,
+      "xp": 1350,
+      "title": "Spade Dark Triad Supreme (100% Devil Host)"
+    },
+    {
+      "level": 49,
+      "xp": 1294,
+      "title": "Arcane Unleashed / Primordial Mana Entity"
+    },
+    {
+      "level": 50,
+      "xp": 1350,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 51,
+      "xp": 1660,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 52,
+      "xp": 1743,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 53,
+      "xp": 1830,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 54,
+      "xp": 1922,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 55,
+      "xp": 2018,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 56,
+      "xp": 2119,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 57,
+      "xp": 2225,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 58,
+      "xp": 2336,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 59,
+      "xp": 2453,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 60,
+      "xp": 2576,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 61,
+      "xp": 2705,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 62,
+      "xp": 2840,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 63,
+      "xp": 2982,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 64,
+      "xp": 3131,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 65,
+      "xp": 3288,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 66,
+      "xp": 3452,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 67,
+      "xp": 3625,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 68,
+      "xp": 3806,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 69,
+      "xp": 3996,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 70,
+      "xp": 4196,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 71,
+      "xp": 4406,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 72,
+      "xp": 4626,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 73,
+      "xp": 4857,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 74,
+      "xp": 5100,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 75,
+      "xp": 5355,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 76,
+      "xp": 5623,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 77,
+      "xp": 5904,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 78,
+      "xp": 6199,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 79,
+      "xp": 6509,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 80,
+      "xp": 6834,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 81,
+      "xp": 7176,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 82,
+      "xp": 7535,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 83,
+      "xp": 7912,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 84,
+      "xp": 8308,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 85,
+      "xp": 8723,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 86,
+      "xp": 9159,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 87,
+      "xp": 9617,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 88,
+      "xp": 10098,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 89,
+      "xp": 10603,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 90,
+      "xp": 11133,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 91,
+      "xp": 11690,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 92,
+      "xp": 12275,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 93,
+      "xp": 12889,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 94,
+      "xp": 13533,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 95,
+      "xp": 14210,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 96,
+      "xp": 14921,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 97,
+      "xp": 15667,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 98,
+      "xp": 16450,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 99,
+      "xp": 17273,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 100,
+      "xp": 18137,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 101,
+      "xp": 19044,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 102,
+      "xp": 19996,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 103,
+      "xp": 20996,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 104,
+      "xp": 22046,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 105,
+      "xp": 23148,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 106,
+      "xp": 24305,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 107,
+      "xp": 25520,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 108,
+      "xp": 26796,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 109,
+      "xp": 28136,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 110,
+      "xp": 29543,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 111,
+      "xp": 31020,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 112,
+      "xp": 32571,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 113,
+      "xp": 34200,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 114,
+      "xp": 35910,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 115,
+      "xp": 37706,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 116,
+      "xp": 39591,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 117,
+      "xp": 41571,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 118,
+      "xp": 43650,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 119,
+      "xp": 45833,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 120,
+      "xp": 48125,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 121,
+      "xp": 50531,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 122,
+      "xp": 53058,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 123,
+      "xp": 55711,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 124,
+      "xp": 58497,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 125,
+      "xp": 61422,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 126,
+      "xp": 64493,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 127,
+      "xp": 67718,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 128,
+      "xp": 71104,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 129,
+      "xp": 74659,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 130,
+      "xp": 78392,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 131,
+      "xp": 82312,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 132,
+      "xp": 86428,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 133,
+      "xp": 90749,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 134,
+      "xp": 95286,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 135,
+      "xp": 100050,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 136,
+      "xp": 105053,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 137,
+      "xp": 110306,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 138,
+      "xp": 115821,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 139,
+      "xp": 121612,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 140,
+      "xp": 127693,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 141,
+      "xp": 134078,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 142,
+      "xp": 140782,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 143,
+      "xp": 147821,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 144,
+      "xp": 155212,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 145,
+      "xp": 162973,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 146,
+      "xp": 171122,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 147,
+      "xp": 179678,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 148,
+      "xp": 188662,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 149,
+      "xp": 198095,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 150,
+      "xp": 208000,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 151,
+      "xp": 218400,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 152,
+      "xp": 229320,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 153,
+      "xp": 240786,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 154,
+      "xp": 252825,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 155,
+      "xp": 265466,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 156,
+      "xp": 278739,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 157,
+      "xp": 292676,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 158,
+      "xp": 307310,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 159,
+      "xp": 322676,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 160,
+      "xp": 338810,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 161,
+      "xp": 355751,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 162,
+      "xp": 373539,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 163,
+      "xp": 392216,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 164,
+      "xp": 411827,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 165,
+      "xp": 432419,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 166,
+      "xp": 454040,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 167,
+      "xp": 476742,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 168,
+      "xp": 500579,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 169,
+      "xp": 525608,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 170,
+      "xp": 551888,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 171,
+      "xp": 579482,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 172,
+      "xp": 608456,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 173,
+      "xp": 638879,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 174,
+      "xp": 670823,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 175,
+      "xp": 704364,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 176,
+      "xp": 739582,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 177,
+      "xp": 776561,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 178,
+      "xp": 815389,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 179,
+      "xp": 856158,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 180,
+      "xp": 898966,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 181,
+      "xp": 943914,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 182,
+      "xp": 991110,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 183,
+      "xp": 1040666,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 184,
+      "xp": 1092699,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 185,
+      "xp": 1147334,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 186,
+      "xp": 1204701,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 187,
+      "xp": 1264936,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 188,
+      "xp": 1328183,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 189,
+      "xp": 1394592,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 190,
+      "xp": 1464322,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 191,
+      "xp": 1537538,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 192,
+      "xp": 1614415,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 193,
+      "xp": 1695136,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 194,
+      "xp": 1779893,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 195,
+      "xp": 1868888,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 196,
+      "xp": 1962332,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 197,
+      "xp": 2060449,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 198,
+      "xp": 2163471,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 199,
+      "xp": 2271645,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 200,
+      "xp": 2385227,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 201,
+      "xp": 2504488,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 202,
+      "xp": 2629712,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 203,
+      "xp": 2761198,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 204,
+      "xp": 2899258,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 205,
+      "xp": 3044221,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 206,
+      "xp": 3196432,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 207,
+      "xp": 3356254,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 208,
+      "xp": 3524067,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 209,
+      "xp": 3700270,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 210,
+      "xp": 3885284,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 211,
+      "xp": 4079548,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 212,
+      "xp": 4283525,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 213,
+      "xp": 4497701,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 214,
+      "xp": 4722586,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 215,
+      "xp": 4958715,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 216,
+      "xp": 5206651,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 217,
+      "xp": 5466984,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 218,
+      "xp": 5740333,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 219,
+      "xp": 6027350,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 220,
+      "xp": 6328718,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 221,
+      "xp": 6645154,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 222,
+      "xp": 6977412,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 223,
+      "xp": 7326283,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 224,
+      "xp": 7692597,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 225,
+      "xp": 8077227,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 226,
+      "xp": 8481088,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 227,
+      "xp": 8905142,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 228,
+      "xp": 9350399,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 229,
+      "xp": 9817919,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 230,
+      "xp": 10308815,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 231,
+      "xp": 10824256,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 232,
+      "xp": 11365469,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 233,
+      "xp": 11933742,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 234,
+      "xp": 12530429,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 235,
+      "xp": 13156950,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 236,
+      "xp": 13814798,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 237,
+      "xp": 14505538,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 238,
+      "xp": 15230815,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 239,
+      "xp": 15992356,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 240,
+      "xp": 16791974,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 241,
+      "xp": 17631573,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 242,
+      "xp": 18513152,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 243,
+      "xp": 19438810,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 244,
+      "xp": 20410751,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 245,
+      "xp": 21431288,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 246,
+      "xp": 22502852,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 247,
+      "xp": 23627995,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 248,
+      "xp": 24809395,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 249,
+      "xp": 26049865,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 250,
+      "xp": 27352358,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 251,
+      "xp": 28719976,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 252,
+      "xp": 30155975,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 253,
+      "xp": 31663774,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 254,
+      "xp": 33246963,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 255,
+      "xp": 34909311,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 256,
+      "xp": 36654777,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 257,
+      "xp": 38487516,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 258,
+      "xp": 40411892,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 259,
+      "xp": 42432487,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 260,
+      "xp": 44554111,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 261,
+      "xp": 46781817,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 262,
+      "xp": 49120908,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 263,
+      "xp": 51576953,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 264,
+      "xp": 54155801,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 265,
+      "xp": 56863591,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 266,
+      "xp": 59706771,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 267,
+      "xp": 62692109,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 268,
+      "xp": 65826714,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 269,
+      "xp": 69118050,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 270,
+      "xp": 72573953,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 271,
+      "xp": 76202650,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 272,
+      "xp": 80012783,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 273,
+      "xp": 84013422,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 274,
+      "xp": 88214093,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 275,
+      "xp": 92624798,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 276,
+      "xp": 97256038,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 277,
+      "xp": 102118840,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 278,
+      "xp": 107224782,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 279,
+      "xp": 112586021,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 280,
+      "xp": 118215322,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 281,
+      "xp": 124126088,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 282,
+      "xp": 130332392,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 283,
+      "xp": 136849012,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 284,
+      "xp": 143691463,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 285,
+      "xp": 150876036,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 286,
+      "xp": 158419838,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 287,
+      "xp": 166340830,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 288,
+      "xp": 174657872,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 289,
+      "xp": 183390766,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 290,
+      "xp": 192560304,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 291,
+      "xp": 202188319,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 292,
+      "xp": 212297735,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 293,
+      "xp": 222912622,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 294,
+      "xp": 234058253,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 295,
+      "xp": 245761166,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 296,
+      "xp": 258049224,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 297,
+      "xp": 270951685,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 298,
+      "xp": 284499270,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 299,
+      "xp": 298724234,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 300,
+      "xp": 313660446,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 301,
+      "xp": 329343468,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 302,
+      "xp": 345810641,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 303,
+      "xp": 363101173,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 304,
+      "xp": 381256232,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 305,
+      "xp": 400319043,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 306,
+      "xp": 420335000,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 307,
+      "xp": 441351750,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 308,
+      "xp": 463419338,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 309,
+      "xp": 486590305,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 310,
+      "xp": 510919820,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 311,
+      "xp": 536465811,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 312,
+      "xp": 563289102,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 313,
+      "xp": 591453557,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 314,
+      "xp": 621026235,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 315,
+      "xp": 652077547,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 316,
+      "xp": 684681424,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 317,
+      "xp": 718915495,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 318,
+      "xp": 754861270,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 319,
+      "xp": 792604333,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 320,
+      "xp": 832234550,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 321,
+      "xp": 873846278,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 322,
+      "xp": 917538592,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 323,
+      "xp": 963415522,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 324,
+      "xp": 1011586298,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 325,
+      "xp": 1062165613,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 326,
+      "xp": 1115273894,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 327,
+      "xp": 1171037599,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 328,
+      "xp": 1229589479,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 329,
+      "xp": 1291068953,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 330,
+      "xp": 1355622401,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 331,
+      "xp": 1423403521,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 332,
+      "xp": 1494573697,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 333,
+      "xp": 1569302382,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 334,
+      "xp": 1647767501,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 335,
+      "xp": 1730155876,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 336,
+      "xp": 1816663669,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 337,
+      "xp": 1907496853,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 338,
+      "xp": 2002871695,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 339,
+      "xp": 2103015280,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 340,
+      "xp": 2208166044,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 341,
+      "xp": 2318574346,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 342,
+      "xp": 2434503063,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 343,
+      "xp": 2556228216,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 344,
+      "xp": 2684039627,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 345,
+      "xp": 2818241608,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 346,
+      "xp": 2959153688,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 347,
+      "xp": 3107111373,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 348,
+      "xp": 3262466941,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 349,
+      "xp": 3425590288,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 350,
+      "xp": 3596879802,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 351,
+      "xp": 3776723792,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 352,
+      "xp": 3965569982,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 353,
+      "xp": 4163858481,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 354,
+      "xp": 4372051405,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 355,
+      "xp": 4590653975,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 356,
+      "xp": 4820186674,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 357,
+      "xp": 5061196008,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 358,
+      "xp": 5314255808,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 359,
+      "xp": 5579968598,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 360,
+      "xp": 5858967028,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 361,
+      "xp": 6151915379,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 362,
+      "xp": 6459511158,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 363,
+      "xp": 6782486716,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 364,
+      "xp": 7121611052,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 365,
+      "xp": 7477691605,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 366,
+      "xp": 7851576185,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 367,
+      "xp": 8244154994,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 368,
+      "xp": 8656362744,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 369,
+      "xp": 9089180881,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 370,
+      "xp": 9543639925,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 371,
+      "xp": 10020821921,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 372,
+      "xp": 10521863017,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 373,
+      "xp": 11047956168,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 374,
+      "xp": 11600353976,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 375,
+      "xp": 12180371675,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 376,
+      "xp": 12789390259,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 377,
+      "xp": 13428859772,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 378,
+      "xp": 14100302761,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 379,
+      "xp": 14805317899,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 380,
+      "xp": 15545583894,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 381,
+      "xp": 16322863089,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 382,
+      "xp": 17139006243,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 383,
+      "xp": 17995956555,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 384,
+      "xp": 18895754383,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 385,
+      "xp": 19840542102,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 386,
+      "xp": 20832569207,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 387,
+      "xp": 21874197667,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 388,
+      "xp": 22967907550,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 389,
+      "xp": 24116302928,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 390,
+      "xp": 25322118074,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 391,
+      "xp": 26588223978,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 392,
+      "xp": 27917635177,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 393,
+      "xp": 29313516936,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 394,
+      "xp": 30779242783,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 395,
+      "xp": 32318304922,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 396,
+      "xp": 33934220168,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 397,
+      "xp": 35630931176,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 398,
+      "xp": 37412477735,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 399,
+      "xp": 39283101622,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 400,
+      "xp": 41247256703,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 401,
+      "xp": 43309619538,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 402,
+      "xp": 45475100515,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 403,
+      "xp": 47748855540,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 404,
+      "xp": 50136317667,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 405,
+      "xp": 52643133550,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 406,
+      "xp": 55275290228,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 407,
+      "xp": 58039054739,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 408,
+      "xp": 60941007476,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 409,
+      "xp": 63988057850,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 410,
+      "xp": 67187460743,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 411,
+      "xp": 70546833780,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 412,
+      "xp": 74074175469,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 413,
+      "xp": 77777884243,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 414,
+      "xp": 81666778455,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 415,
+      "xp": 85750117378,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 416,
+      "xp": 90037623247,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 417,
+      "xp": 94539504409,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 418,
+      "xp": 99266479630,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 419,
+      "xp": 104229803612,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 420,
+      "xp": 109441293793,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 421,
+      "xp": 114913358483,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 422,
+      "xp": 120659026407,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 423,
+      "xp": 126691977727,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 424,
+      "xp": 133026576613,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 425,
+      "xp": 139677905444,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 426,
+      "xp": 146661800716,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 427,
+      "xp": 153994890752,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 428,
+      "xp": 161694635290,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 429,
+      "xp": 169779367054,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 430,
+      "xp": 178268335407,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 431,
+      "xp": 187181752177,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 432,
+      "xp": 196540839786,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 433,
+      "xp": 206367881775,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 434,
+      "xp": 216686275864,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 435,
+      "xp": 227520589657,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 436,
+      "xp": 238896619140,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 437,
+      "xp": 250841450097,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 438,
+      "xp": 263383522602,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 439,
+      "xp": 276552698732,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 440,
+      "xp": 290380333669,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 441,
+      "xp": 304899350352,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 442,
+      "xp": 320144317870,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 443,
+      "xp": 336151533763,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 444,
+      "xp": 352959110451,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 445,
+      "xp": 370607066974,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 446,
+      "xp": 389137420322,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 447,
+      "xp": 408594291338,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 448,
+      "xp": 429024006905,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 449,
+      "xp": 450475207250,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 450,
+      "xp": 472999467612,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 451,
+      "xp": 496649441000,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 452,
+      "xp": 521481913050,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 453,
+      "xp": 547556008702,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 454,
+      "xp": 574933809137,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 455,
+      "xp": 603680499594,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 456,
+      "xp": 633864524574,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 457,
+      "xp": 665557750803,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 458,
+      "xp": 698835638343,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 459,
+      "xp": 733777420260,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 460,
+      "xp": 770466291273,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 461,
+      "xp": 808989605837,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 462,
+      "xp": 849439086129,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 463,
+      "xp": 891911040435,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 464,
+      "xp": 936506592457,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 465,
+      "xp": 983331922080,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 466,
+      "xp": 1032498518184,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 467,
+      "xp": 1084123444093,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 468,
+      "xp": 1138329616298,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 469,
+      "xp": 1195246097113,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 470,
+      "xp": 1255008401969,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 471,
+      "xp": 1317758822067,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 472,
+      "xp": 1383646763170,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 473,
+      "xp": 1452829101329,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 474,
+      "xp": 1525470556395,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 475,
+      "xp": 1601744084215,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 476,
+      "xp": 1681831288426,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 477,
+      "xp": 1765927852847,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 478,
+      "xp": 1854224245489,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 479,
+      "xp": 1946935457763,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 480,
+      "xp": 2044282230651,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 481,
+      "xp": 2146496342184,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 482,
+      "xp": 2253821159293,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 483,
+      "xp": 2366512217258,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 484,
+      "xp": 2484837828121,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 485,
+      "xp": 2609084719527,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 486,
+      "xp": 2739538955503,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 487,
+      "xp": 2876515903278,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 488,
+      "xp": 3020341698442,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 489,
+      "xp": 3171358783364,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 490,
+      "xp": 3329926722532,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 491,
+      "xp": 3496423058659,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 492,
+      "xp": 3671244211592,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 493,
+      "xp": 3854806422172,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 494,
+      "xp": 4047546743281,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 495,
+      "xp": 4249924080445,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 496,
+      "xp": 4462420284467,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 497,
+      "xp": 4685541298690,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 498,
+      "xp": 4919818363625,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 499,
+      "xp": 5165809281806,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    },
+    {
+      "level": 500,
+      "xp": 5424109745896,
+      "title": "Absolute Magic Sovereign / Lord of the Underworld"
+    }
+  ],
+  "shop": [
+    {
+      "id": 1,
+      "category": "utilities",
+      "name": "Fishing Rod",
+      "emoji": "🎣",
+      "price": 5000,
+      "desc": "Required to catch fish"
+    },
+    {
+      "id": 2,
+      "category": "utilities",
+      "name": "Bait Pack",
+      "emoji": "🪱",
+      "price": 7500,
+      "desc": "Consumable bait pack for fishing"
+    },
+    {
+      "id": 4,
+      "category": "utilities",
+      "name": "Pickaxe",
+      "emoji": "⛏️",
+      "price": 15000,
+      "desc": "Required to mine precious metals"
+    },
+    {
+      "id": 5,
+      "category": "utilities",
+      "name": "Axe",
+      "emoji": "🪓",
+      "price": 18000,
+      "desc": "Chopping wood tool"
+    },
+    {
+      "id": 6,
+      "category": "utilities",
+      "name": "Shovel",
+      "emoji": "🪣",
+      "price": 25000,
+      "desc": "Required to dig up ancient treasures"
+    },
+    {
+      "id": 8,
+      "category": "utilities",
+      "name": "Explora kit",
+      "emoji": "🏺",
+      "price": 120000,
+      "desc": "Required to explore mystical portals"
+    },
+    {
+      "id": 9,
+      "category": "utilities",
+      "name": "Crime Box",
+      "emoji": "🧰",
+      "price": 8000,
+      "desc": "Required for high-stakes crimes"
+    },
+    {
+      "id": 17,
+      "category": "utilities",
+      "name": "Vault",
+      "emoji": "🔐",
+      "price": 75000,
+      "desc": "Protects you from heists for 12 hours after purchase"
+    },
+    {
+      "id": 10,
+      "category": "perks",
+      "name": "Boost",
+      "emoji": "⚡",
+      "price": 50000,
+      "desc": "Increases overall user earnings by +25%"
+    },
+    {
+      "id": 11,
+      "category": "perks",
+      "name": "Lucky Die",
+      "emoji": "🎲",
+      "price": 35000,
+      "desc": "Increases dice win chance"
+    },
+    {
+      "id": 12,
+      "category": "perks",
+      "name": "Lucky Coin",
+      "emoji": "🪙",
+      "price": 30000,
+      "desc": "Increases coin flip win chance"
+    },
+    {
+      "id": 13,
+      "category": "perks",
+      "name": "Lucky Basketball",
+      "emoji": "🏀",
+      "price": 35000,
+      "desc": "Increases basketball shot accuracy"
+    },
+    {
+      "id": 14,
+      "category": "perks",
+      "name": "Lucky Dart",
+      "emoji": "🎯",
+      "price": 40000,
+      "desc": "Increases dart game accuracy"
+    },
+    {
+      "id": 15,
+      "category": "perks",
+      "name": "Lucky Football",
+      "emoji": "⚽",
+      "price": 35000,
+      "desc": "Increases penalty shot goal rate"
+    },
+    {
+      "id": 16,
+      "category": "perks",
+      "name": "Lucky Magnet",
+      "emoji": "🧲",
+      "price": 45000,
+      "desc": "Increases gathering & mining success rate"
+    },
+    {
+      "id": 100,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Common",
+      "name": "1-Leaf Grimoire",
+      "emoji": "🍀",
+      "price": 10000,
+      "desc": "The most basic grimoire. +100 Mana, +50 HP",
+      "mana": 100,
+      "hp": 50
+    },
+    {
+      "id": 101,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Common",
+      "name": "2-Leaf Grimoire",
+      "emoji": "🍀",
+      "price": 50000,
+      "desc": "Budding magic potential. +250 Mana, +125 HP",
+      "mana": 250,
+      "hp": 125
+    },
+    {
+      "id": 114,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Common",
+      "name": "Fire Grimoire",
+      "emoji": "🔥",
+      "price": 80000,
+      "desc": "Crimson flames of destruction. +200 Mana, +100 HP",
+      "mana": 200,
+      "hp": 100
+    },
+    {
+      "id": 115,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Common",
+      "name": "Water Grimoire",
+      "emoji": "💧",
+      "price": 80000,
+      "desc": "Flowing tides of healing power. +150 Mana, +200 HP",
+      "mana": 150,
+      "hp": 200
+    },
+    {
+      "id": 116,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Common",
+      "name": "Wind Grimoire",
+      "emoji": "🌪️",
+      "price": 80000,
+      "desc": "Blade winds that slice through armor. +220 Mana, +80 HP",
+      "mana": 220,
+      "hp": 80
+    },
+    {
+      "id": 117,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Common",
+      "name": "Earth Grimoire",
+      "emoji": "🪨",
+      "price": 80000,
+      "desc": "Ancient stone walls and golems. +100 Mana, +250 HP",
+      "mana": 100,
+      "hp": 250
+    },
+    {
+      "id": 102,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Uncommon",
+      "name": "3-Leaf Grimoire",
+      "emoji": "🍀",
+      "price": 150000,
+      "desc": "Rare talent blooms here. +500 Mana, +250 HP",
+      "mana": 500,
+      "hp": 250
+    },
+    {
+      "id": 118,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Uncommon",
+      "name": "Lightning Grimoire",
+      "emoji": "⚡",
+      "price": 200000,
+      "desc": "Thunder magic that strikes twice as fast. +450 Mana, +200 HP",
+      "mana": 450,
+      "hp": 200
+    },
+    {
+      "id": 119,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Uncommon",
+      "name": "Ice Grimoire",
+      "emoji": "❄️",
+      "price": 200000,
+      "desc": "Freeze enemies in absolute zero. +400 Mana, +300 HP",
+      "mana": 400,
+      "hp": 300
+    },
+    {
+      "id": 120,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Uncommon",
+      "name": "Steel Grimoire",
+      "emoji": "⚙️",
+      "price": 180000,
+      "desc": "Iron armor and metallic strikes. +300 Mana, +450 HP",
+      "mana": 300,
+      "hp": 450
+    },
+    {
+      "id": 121,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Uncommon",
+      "name": "Sand Grimoire",
+      "emoji": "🏜️",
+      "price": 190000,
+      "desc": "Desert storms and sand burial. +380 Mana, +280 HP",
+      "mana": 380,
+      "hp": 280
+    },
+    {
+      "id": 122,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Uncommon",
+      "name": "Plant Grimoire",
+      "emoji": "🌿",
+      "price": 170000,
+      "desc": "Vines and thorns restrain your enemies. +350 Mana, +350 HP",
+      "mana": 350,
+      "hp": 350
+    },
+    {
+      "id": 103,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Rare",
+      "name": "4-Leaf Grimoire",
+      "emoji": "🍀",
+      "price": 500000,
+      "desc": "Chosen by destiny itself. +1000 Mana, +500 HP",
+      "mana": 1000,
+      "hp": 500
+    },
+    {
+      "id": 123,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Rare",
+      "name": "Shadow Grimoire",
+      "emoji": "🌑",
+      "price": 600000,
+      "desc": "Darkness swallows all light. +800 Mana, +400 HP",
+      "mana": 800,
+      "hp": 400
+    },
+    {
+      "id": 124,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Rare",
+      "name": "Blood Grimoire",
+      "emoji": "🩸",
+      "price": 650000,
+      "desc": "Crimson curses and blood manipulation. +750 Mana, +450 HP",
+      "mana": 750,
+      "hp": 450
+    },
+    {
+      "id": 125,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Rare",
+      "name": "Sound Grimoire",
+      "emoji": "🎵",
+      "price": 580000,
+      "desc": "Sonic waves shatter the mind. +900 Mana, +300 HP",
+      "mana": 900,
+      "hp": 300
+    },
+    {
+      "id": 126,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Rare",
+      "name": "Poison Grimoire",
+      "emoji": "☠️",
+      "price": 620000,
+      "desc": "Venomous miasma that corrupts all life. +700 Mana, +550 HP",
+      "mana": 700,
+      "hp": 550
+    },
+    {
+      "id": 127,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Rare",
+      "name": "Bone Grimoire",
+      "emoji": "🦴",
+      "price": 590000,
+      "desc": "Skeletal constructs risen from death. +750 Mana, +500 HP",
+      "mana": 750,
+      "hp": 500
+    },
+    {
+      "id": 128,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Epic",
+      "name": "Spatial Grimoire",
+      "emoji": "🌀",
+      "price": 1500000,
+      "desc": "Bend space and teleport freely. +1200 Mana, +600 HP",
+      "mana": 1200,
+      "hp": 600
+    },
+    {
+      "id": 129,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Epic",
+      "name": "Gravity Grimoire",
+      "emoji": "🌍",
+      "price": 1400000,
+      "desc": "Crush foes under immense gravitational force. +1100 Mana, +700 HP",
+      "mana": 1100,
+      "hp": 700
+    },
+    {
+      "id": 130,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Epic",
+      "name": "Copy Grimoire",
+      "emoji": "📋",
+      "price": 1800000,
+      "desc": "Mirror any spell used against you. +1300 Mana, +700 HP",
+      "mana": 1300,
+      "hp": 700
+    },
+    {
+      "id": 131,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Epic",
+      "name": "Lightning God Grimoire",
+      "emoji": "⚡",
+      "price": 1600000,
+      "desc": "Roar of the Thunder God himself. +1500 Mana, +500 HP",
+      "mana": 1500,
+      "hp": 500
+    },
+    {
+      "id": 132,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Epic",
+      "name": "Curse Grimoire",
+      "emoji": "🔮",
+      "price": 1700000,
+      "desc": "Eternal curses that weaken enemies over time. +1000 Mana, +900 HP",
+      "mana": 1000,
+      "hp": 900
+    },
+    {
+      "id": 104,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Mythical",
+      "name": "5-Leaf Grimoire",
+      "emoji": "🍀",
+      "price": 2500000,
+      "desc": "Power beyond the devil's reach. +2500 Mana, +1250 HP",
+      "mana": 2500,
+      "hp": 1250
+    },
+    {
+      "id": 133,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Mythical",
+      "name": "Void Grimoire",
+      "emoji": "🕳️",
+      "price": 3000000,
+      "desc": "Erase existence from reality itself. +2000 Mana, +1800 HP",
+      "mana": 2000,
+      "hp": 1800
+    },
+    {
+      "id": 134,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Mythical",
+      "name": "Soul Grimoire",
+      "emoji": "👻",
+      "price": 3500000,
+      "desc": "Command the lost souls of the fallen. +1800 Mana, +2200 HP",
+      "mana": 1800,
+      "hp": 2200
+    },
+    {
+      "id": 135,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Mythical",
+      "name": "Dragon Grimoire",
+      "emoji": "🐉",
+      "price": 4000000,
+      "desc": "Ancient dragon force surges within you. +2200 Mana, +2000 HP",
+      "mana": 2200,
+      "hp": 2000
+    },
+    {
+      "id": 136,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Mythical",
+      "name": "Infinity Grimoire",
+      "emoji": "♾️",
+      "price": 4500000,
+      "desc": "Infinite magic loops echo forever. +3000 Mana, +1500 HP",
+      "mana": 3000,
+      "hp": 1500
+    },
+    {
+      "id": 137,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Mythical",
+      "name": "Star Grimoire",
+      "emoji": "⭐",
+      "price": 5000000,
+      "desc": "Celestial constellations guide your power. +2500 Mana, +2500 HP",
+      "mana": 2500,
+      "hp": 2500
+    },
+    {
+      "id": 105,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Divine",
+      "name": "Time Grimoire",
+      "emoji": "⏳",
+      "price": 7000000,
+      "desc": "Rewrite moments in the heat of battle. +5000 Mana, +2500 HP",
+      "mana": 5000,
+      "hp": 2500
+    },
+    {
+      "id": 138,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Divine",
+      "name": "Anti-Magic Grimoire",
+      "emoji": "⬛",
+      "price": 8000000,
+      "desc": "Negates all magic — only the strongest survive. +4000 Mana, +4000 HP",
+      "mana": 4000,
+      "hp": 4000
+    },
+    {
+      "id": 139,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Divine",
+      "name": "Creation Grimoire",
+      "emoji": "✨",
+      "price": 10000000,
+      "desc": "Manifest anything from pure concentrated mana. +6000 Mana, +3000 HP",
+      "mana": 6000,
+      "hp": 3000
+    },
+    {
+      "id": 140,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Divine",
+      "name": "World Tree Grimoire",
+      "emoji": "🌳",
+      "price": 12000000,
+      "desc": "Root of all living mana in the world. +5000 Mana, +6000 HP",
+      "mana": 5000,
+      "hp": 6000
+    },
+    {
+      "id": 141,
+      "category": "clover",
+      "subcategory": "grimoire",
+      "tier": "Legendary",
+      "name": "Demon King Grimoire",
+      "emoji": "👑",
+      "price": 25000000,
+      "desc": "The Demon King's own tome. Power unmatched by any mortal. +10000 Mana, +10000 HP",
+      "mana": 10000,
+      "hp": 10000
+    },
+    {
+      "id": 106,
+      "category": "clover",
+      "subcategory": "spirit",
+      "name": "Sylph (Wind)",
+      "emoji": "🧚",
+      "price": 2000000,
+      "desc": "Wind Spirit. +1500 Mana",
+      "mana": 1500,
+      "hp": 0
+    },
+    {
+      "id": 107,
+      "category": "clover",
+      "subcategory": "spirit",
+      "name": "Salamander (Fire)",
+      "emoji": "🦎",
+      "price": 2000000,
+      "desc": "Fire Spirit. +1000 Mana, +500 HP",
+      "mana": 1000,
+      "hp": 500
+    },
+    {
+      "id": 108,
+      "category": "clover",
+      "subcategory": "spirit",
+      "name": "Undine (Water)",
+      "emoji": "💧",
+      "price": 2000000,
+      "desc": "Water Spirit. +500 Mana, +1000 HP",
+      "mana": 500,
+      "hp": 1000
+    },
+    {
+      "id": 109,
+      "category": "clover",
+      "subcategory": "spirit",
+      "name": "Gnome (Earth)",
+      "emoji": "🪨",
+      "price": 2000000,
+      "desc": "Earth Spirit. +1500 HP",
+      "mana": 0,
+      "hp": 1500
+    },
+    {
+      "id": 110,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Liebe",
+      "emoji": "😈",
+      "price": 3000000,
+      "desc": "Anti-Magic. +2000 HP, +1000 Mana",
+      "mana": 1000,
+      "hp": 2000
+    },
+    {
+      "id": 111,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Zagred",
+      "emoji": "👿",
+      "price": 3500000,
+      "desc": "Word Magic. +1500 HP, +1500 Mana",
+      "mana": 1500,
+      "hp": 1500
+    },
+    {
+      "id": 112,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Megicula",
+      "emoji": "👹",
+      "price": 4000000,
+      "desc": "Curse Warding. +1000 HP, +2000 Mana",
+      "mana": 2000,
+      "hp": 1000
+    },
+    {
+      "id": 113,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Lucifero",
+      "emoji": "💀",
+      "price": 10000000,
+      "desc": "Gravity Magic. +5000 HP, +5000 Mana",
+      "mana": 5000,
+      "hp": 5000
+    },
+    {
+      "id": 114,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Beelzebub",
+      "emoji": "🪰",
+      "price": 8500000,
+      "desc": "Spatial Magic. +4000 HP, +4500 Mana",
+      "mana": 4500,
+      "hp": 4000
+    },
+    {
+      "id": 115,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Astaroth",
+      "emoji": "⏳",
+      "price": 9000000,
+      "desc": "Time Magic. +3500 HP, +5500 Mana",
+      "mana": 5500,
+      "hp": 3500
+    },
+    {
+      "id": 116,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Lucifugus",
+      "emoji": "🌑",
+      "price": 7000000,
+      "desc": "Dark Magic. +3800 HP, +3800 Mana",
+      "mana": 3800,
+      "hp": 3800
+    },
+    {
+      "id": 117,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Lilith",
+      "emoji": "❄️",
+      "price": 6000000,
+      "desc": "Demonic Ice Magic. +3200 HP, +3500 Mana",
+      "mana": 3500,
+      "hp": 3200
+    },
+    {
+      "id": 118,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Nahamah",
+      "emoji": "🔥",
+      "price": 6000000,
+      "desc": "Demonic Fire Magic. +3500 HP, +3200 Mana",
+      "mana": 3200,
+      "hp": 3500
+    },
+    {
+      "id": 119,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Adramelech",
+      "emoji": "✨",
+      "price": 7500000,
+      "desc": "Light Magic. +3000 HP, +4500 Mana",
+      "mana": 4500,
+      "hp": 3000
+    },
+    {
+      "id": 120,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Gimodelo",
+      "emoji": "🐺",
+      "price": 2500000,
+      "desc": "Shadow Magic. +1800 HP, +1200 Mana",
+      "mana": 1200,
+      "hp": 1800
+    },
+    {
+      "id": 121,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Slotos",
+      "emoji": "🦇",
+      "price": 2200000,
+      "desc": "Enhancement. +2000 HP, +800 Mana",
+      "mana": 800,
+      "hp": 2000
+    },
+    {
+      "id": 122,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Plumede",
+      "emoji": "🐍",
+      "price": 2100000,
+      "desc": "Speed Magic. +1200 HP, +1500 Mana",
+      "mana": 1500,
+      "hp": 1200
+    },
+    {
+      "id": 123,
+      "category": "clover",
+      "subcategory": "demon",
+      "name": "Walgner",
+      "emoji": "🐉",
+      "price": 2300000,
+      "desc": "Paralysis Magic. +1600 HP, +1400 Mana",
+      "mana": 1400,
+      "hp": 1600
+    }
+  ],
+  "gameSettings": {
+    "cooldowns": {
+      "1": 300000,
+      "2": 240000,
+      "3": 180000,
+      "4": 120000,
+      "5": 60000
+    },
+    "successRates": {
+      "1": 50,
+      "2": 60,
+      "3": 70,
+      "4": 80,
+      "5": 90
+    },
+    "dailyLimits": {
+      "dice": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 25
+      },
+      "basket": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 26
+      },
+      "coin": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 27
+      },
+      "slots": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 28
+      },
+      "penalty": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 29
+      },
+      "dart": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 30
+      },
+      "bowl": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 31
+      },
+      "fish": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 32
+      },
+      "explore": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 33
+      },
+      "mine": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 34
+      },
+      "dig": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 35
+      },
+      "crime": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 36
+      },
+      "ttt": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 37
+      },
+      "rps": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 38
+      },
+      "msweep": {
+        "1": 5,
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 39
+      }
+    }
+  },
+  "rewards": {
+    "fish": {
+      "min": 2000,
+      "max": 8000
+    },
+    "explore": {
+      "min": 8000,
+      "max": 25000
+    },
+    "mine": {
+      "min": 4000,
+      "max": 15000
+    },
+    "dig": {
+      "min": 5000,
+      "max": 18000
+    },
+    "crime": {
+      "min": 6000,
+      "max": 20000
+    }
+  }
+}

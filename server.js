@@ -10,10 +10,35 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Import the database and game logic from the bot source!
-import { db, CONFIG, getTier, getLevelInfo, initMongoStorage } from '../src/database/localstorage.js';
-import { getAllCards } from '../src/clover/characters.js';
-import { fetchPokemonData, FEATURED_POKEMON } from '../src/clover/pokemon.js';
+// Import the database and game logic from the local self-contained file!
+import { db, CONFIG, getTier, getLevelInfo, initMongoStorage } from './db.js';
+
+// Self-contained character cards helper
+const getAllCards = () => db.getAllCards();
+
+// Local helper for PokéAPI
+const POKE_CACHE = new Map();
+async function fetchPokemonData(nameOrId) {
+  const key = String(nameOrId).toLowerCase().trim();
+  if (POKE_CACHE.has(key)) return POKE_CACHE.get(key);
+  try {
+    const r = await fetch(`https://pokeapi.co/api/v2/pokemon/${key}`);
+    if (!r.ok) return null;
+    const d = await r.json();
+    const result = {
+      id: d.id,
+      name: d.name,
+      displayName: d.name.charAt(0).toUpperCase() + d.name.slice(1),
+      sprite: d.sprites?.other?.['official-artwork']?.front_default || d.sprites?.front_default,
+      types: d.types.map(t => t.type.name),
+      stats: Object.fromEntries(d.stats.map(s => [s.stat.name, s.base_stat])),
+      catchPrice: 50000 + d.id * 1000,
+    };
+    POKE_CACHE.set(key, result);
+    return result;
+  } catch { return null; }
+}
+const FEATURED_POKEMON = ['pikachu','charizard','mewtwo','gengar','eevee','snorlax','lucario','gardevoir','rayquaza','umbreon'];
 
 /* ── Env loading ──────────────────────────────────────────────── */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
