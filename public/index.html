@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Nova Chrono — Magic Kingdom</title>
+  <meta name="description" content="Nova Chrono Web App — Black Clover RPG. Manage your Magic Knight profile, battle enemies, collect character cards and Pokémon, and conquer the leaderboards." />
+  <meta name="theme-color" content="#0a0b0f" />
+  <meta property="og:title" content="Nova Chrono" />
+  <meta property="og:description" content="Black Clover RPG — Web Dashboard" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Inline SVG sprite (all icons) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" id="svg-sprite">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/><path d="M3 12v9h18V12"/></symbol>
+    <symbol id="icon-shop" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></symbol>
+    <symbol id="icon-cards" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="icon-games" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M7 12h.01M17 12h.01"/><path d="M9 10v4"/></symbol>
+    <symbol id="icon-community" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></symbol>
+    <symbol id="icon-admin" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="icon-sword" viewBox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/></symbol>
+    <symbol id="icon-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-4-6h8"/><path d="M9.5 9.5c0-1 1-1.5 2.5-1.5s2.5.5 2.5 1.5-1 1.5-2.5 1.5S9.5 11 9.5 10m5 5c0 1-1 1.5-2.5 1.5S9.5 16 9.5 15"/></symbol>
+    <symbol id="icon-gem" viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="2"/><path d="M2 8.5l10 7 10-7"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></symbol>
+    <symbol id="icon-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="icon-fish" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12l9.59-9.59a2 2 0 012.83 0l7.17 7.17a2 2 0 010 2.83z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+    <symbol id="icon-mine" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></symbol>
+    <symbol id="icon-explore" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="icon-dig" viewBox="0 0 24 24"><path d="M3 21h18M12 3v4m0 0l3-3m-3 3l-3-3"/><path d="M7 10h10l2 11H5L7 10z"/></symbol>
+    <symbol id="icon-crime" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+    <symbol id="icon-transfer" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14m-4 14l4 4-4 4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></symbol>
+    <symbol id="icon-bank" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7 12 2"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></symbol>
+    <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="icon-dice" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="8" r="1.5" fill="currentColor"/><circle cx="8" cy="16" r="1.5" fill="currentColor"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="icon-slots" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="9" y1="4" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/><path d="M6 12h2m4 0h2m4 0h-2"/></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></symbol>
+    <symbol id="icon-package" viewBox="0 0 24 24"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+    <symbol id="icon-group" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="icon-warning" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="icon-broadcast" viewBox="0 0 24 24"><path d="M2 16.1A5 5 0 015.9 20M2 12.05A9 9 0 019.95 20M2 8V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></symbol>
+    <symbol id="icon-timer" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="icon-afk" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="23" y2="12"/><line x1="23" y1="8" x2="19" y2="12"/></symbol>
+    <symbol id="icon-poke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="icon-squad" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="icon-battle" viewBox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6m-3 3l4 4M19 21l2-2"/></symbol>
+  </svg>
+</head>
+<body>
+  <!-- App root -->
+  <div id="app">
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen hidden">
+      <div class="login-bg"></div>
+      <div class="login-card">
+        <div class="login-logo">
+          <svg class="logo-icon" viewBox="0 0 60 60"><defs><linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#7c3aed"/><stop offset="100%" style="stop-color:#f59e0b"/></linearGradient></defs><path fill="url(#lg1)" d="M30 5L5 18v24l25 13 25-13V18L30 5zm0 8l18 9.5v19L30 51 12 41.5v-19L30 13z"/><path fill="rgba(255,255,255,0.8)" d="M30 20l-8 4v8l8 4 8-4v-8l-8-4z"/></svg>
+          <div>
+            <h1 class="login-title">Nova Chrono</h1>
+            <p class="login-sub">Magic Kingdom Portal</p>
+          </div>
+        </div>
+        <p class="login-desc">Enter the email you linked with <code>/secure</code> in the Telegram bot to access your Magic Knight dashboard.</p>
+        <div class="login-form">
+          <div class="input-group">
+            <svg class="input-icon"><use href="#icon-user"/></svg>
+            <input id="login-email" type="email" placeholder="your@gmail.com" autocomplete="email" />
+          </div>
+          <button id="login-btn" class="btn btn-primary btn-lg">
+            <svg class="btn-icon"><use href="#icon-bolt"/></svg>
+            Enter the Kingdom
+          </button>
+          <p id="login-error" class="login-error hidden"></p>
+        </div>
+        <p class="login-hint">Don't have access? Open <strong>Telegram</strong>, message the bot, and send <code>/secure your@email.com</code></p>
+      </div>
+    </div>
+
+    <!-- Main App Shell (hidden until logged in) -->
+    <div id="main-app" class="main-app hidden">
+      <!-- Top Bar -->
+      <header class="topbar" id="topbar">
+        <div class="topbar-left">
+          <button class="topbar-menu" id="topbar-menu-btn" title="Menu">
+            <svg><use href="#icon-settings"/></svg>
+          </button>
+          <span class="topbar-title" id="topbar-title">Home</span>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-balance" id="topbar-balance">
+            <svg class="icon-sm"><use href="#icon-coin"/></svg>
+            <span id="topbar-yul">--</span>
+          </div>
+          <button class="topbar-btn" id="topbar-bell" title="Cooldowns">
+            <svg><use href="#icon-bell"/></svg>
+            <span class="badge" id="cd-badge" style="display:none"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Settings Drawer -->
+      <div class="drawer-overlay" id="drawer-overlay"></div>
+      <aside class="settings-drawer" id="settings-drawer">
+        <div class="drawer-header">
+          <span>Settings</span>
+          <button id="drawer-close"><svg><use href="#icon-close"/></svg></button>
+        </div>
+        <div class="drawer-user" id="drawer-user-info"></div>
+        <nav class="drawer-nav">
+          <button class="drawer-item" id="btn-edit-email">
+            <svg><use href="#icon-user"/></svg> Link Email
+          </button>
+          <button class="drawer-item" id="btn-logout">
+            <svg><use href="#icon-logout"/></svg> Log Out
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Page Content -->
+      <main class="page-content" id="page-content">
+        <!-- Sections injected by JS -->
+      </main>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-nav" id="bottom-nav">
+        <button class="nav-item active" data-tab="home" id="nav-home">
+          <svg><use href="#icon-home"/></svg>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" data-tab="market" id="nav-market">
+          <svg><use href="#icon-shop"/></svg>
+          <span>Market</span>
+        </button>
+        <button class="nav-item" data-tab="cards" id="nav-cards">
+          <svg><use href="#icon-cards"/></svg>
+          <span>Cards</span>
+        </button>
+        <button class="nav-item" data-tab="games" id="nav-games">
+          <svg><use href="#icon-games"/></svg>
+          <span>Games</span>
+        </button>
+        <button class="nav-item" data-tab="community" id="nav-community">
+          <svg><use href="#icon-community"/></svg>
+          <span>Community</span>
+        </button>
+        <button class="nav-item admin-tab hidden" data-tab="admin" id="nav-admin">
+          <svg><use href="#icon-admin"/></svg>
+          <span>Admin</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Global Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close"><svg><use href="#icon-close"/></svg></button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Cooldown Panel -->
+  <div id="cd-panel" class="cd-panel hidden">
+    <div class="cd-panel-header">
+      <span>⏱ Cooldowns</span>
+      <button id="cd-panel-close"><svg><use href="#icon-close"/></svg></button>
+    </div>
+    <div id="cd-panel-body"></div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "nova-chrono-webapp",
+  "version": "1.0.0",
+  "description": "Nova Chrono — Standalone Web Application Server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.18.0"
+  }
+}
